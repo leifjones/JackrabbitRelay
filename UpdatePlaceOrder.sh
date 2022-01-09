@@ -25,7 +25,7 @@ cp $GitHubBase"/"$fnFuture $BaseDir"/"$fnFuture
 for i in $@ ; do
     exchange=$1
     echo Updating / replacing PlaceOrder.$exchange spot/future
-    cp $GitHubBase"/"$fnSpot PlaceOrder.$exchange.spot
-    cp $GitHubBase"/"$fnFuture PlaceOrder.$exchange.future
+    cp $GitHubBase"/"$fnSpot PlaceOrder.$exchange.spot.py
+    cp $GitHubBase"/"$fnFuture PlaceOrder.$exchange.future.py
     shift
 done

@@ -31,8 +31,8 @@ while true ; do
         once=$8
     fi
 
-    $BaseDir/Equilibrium.future $1 $2 $3 $4 $lots $slots $7 $once $9
-    $BaseDir/CheckStop $@
+    $BaseDir/Equilibrium.future.py $1 $2 $3 $4 $lots $slots $7 $once $9
+    $BaseDir/CheckStop.sh $@
     if [ $? -eq 1 ] ; then
         exit
     fi

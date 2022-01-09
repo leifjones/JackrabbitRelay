@@ -31,12 +31,13 @@ while true ; do
         once=$7
     fi
 
-    $BaseDir/Equilibrium.spot $1 $2 $3 $4 $lots $slots $once $8 $9
-    $BaseDir/CheckStop $@
+    $BaseDir/Equilibrium.spot.py $1 $2 $3 $4 $lots $slots $once $8 $9
+    $BaseDir/CheckStop.sh $@
     if [ $? -eq 1 ] ; then
         exit
     fi
     sleep 60
+    # Why wait 60 seconds?
 done
 
 

@@ -201,25 +201,25 @@ The Jackrabbit Relay file structure and folder layout is very simple:
 In the base directory (/home/JackrabbitRelay/Base), there are several
 files:
 
-    CCXT-PlaceOrder.spot
-    CCXT-PlaceOrder.future
+    CCXT-PlaceOrder.spot.py
+    CCXT-PlaceOrder.future.py
 
         These are the Order Processors. You actually wont use these files
         directly, but rather copy them to the actual exchange designated
-        order transactor, for example PlaceOrder.ftxus.spot
+        order transactor, for example PlaceOrder.ftxus.spot.py
 
-    PlaceOrder.tester.spot
+    PlaceOrder.tester.spot.py
 
         This is just a dummy test module that you can use to test the
         connection with TradingView. 
 
-    JackrabbitRelay
+    JackrabbitRelay.py
 
         This is the actual server program that waits for a connection.
         It should NOT be ran directly, but rather through the
         RelayLauncher shell script.
 
-    RelayLauncher
+    RelayLauncher.sh
 
         This shell script sets the port and launches the server. It is
         the harness that keeps everything running and is what you place
@@ -289,13 +289,13 @@ For Jackrabbit Relay to auto start after a reboot, the following line
 needs to be added to your crontab. BE SURE TO CHANGE THE 12345 TO THE
 PORT YOU WANT.
 
-    @reboot ( /home/JackrabbitRelay/Base/RelayLauncher 12345 & ) > /dev/null 2>&1
+    @reboot ( /home/JackrabbitRelay/Base/RelayLauncher.sh 12345 & ) > /dev/null 2>&1
 
 ## Manual startup
 
 Use the following command. Be sure to replace the 12345 with the proper port.
 
-    ( /home/JackrabbitRelay/Base/RelayLauncher 12345 & ) > /dev/null 2>&1
+    ( /home/JackrabbitRelay/Base/RelayLauncher.sh 12345 & ) > /dev/null 2>&1
 
 ## The Payload
 

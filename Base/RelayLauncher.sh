@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Crontab entry ( without has mark #
-# @reboot ( /home/JackrabbitRelay/Base/RelayLauncher & ) > /dev/null 2>&1
+# @reboot ( /home/JackrabbitRelay/Base/RelayLauncher.sh & ) > /dev/null 2>&1
 
 BaseDir="/home/JackrabbitRelay/Base"
 
@@ -15,7 +15,7 @@ fi
 cd $BaseDir
 
 while true ; do
-    $BaseDir/JackrabbitRelay $Port
+    $BaseDir/JackrabbitRelay.py $Port
     sleep 180
 done
 

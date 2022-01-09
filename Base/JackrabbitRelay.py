@@ -62,9 +62,9 @@ def ProcessTrade(addr,payload):
                 exchange=trades['Exchange'].lower()
                 if "Market" in trades:
                     market=trades['Market'].lower()
-                    fn=ts+exchange+'.'+market
+                    fn=ts+exchange+'.'+market+'.py'
                 else:
-                    fn=ts+exchange
+                    fn=ts+exchange+'.py'
                 if os.path.exists(fn):
                     transactor= [ fn ]
                     subp=subprocess.Popen(transactor,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
@@ -85,9 +85,9 @@ def ProcessTrade(addr,payload):
                     exchange=trade['Exchange'].lower()
                     if "Market" in trades:
                         market=trades['Market'].lower()
-                        fn=ts+exchange+'.'+market
+                        fn=ts+exchange+'.'+market+'.py'
                     else:
-                        fn=ts+exchange
+                        fn=ts+exchange+'.py'
                     if os.path.exists(fn):
                         transactor= [ fn ]
                         subp=subprocess.Popen(transactor,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
